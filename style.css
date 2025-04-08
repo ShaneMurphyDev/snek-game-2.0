@@ -1,18 +1,26 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif;
     text-align: center;
-    background: black;
-    color: white;
-  }
-  
-  h1 {
+    background: #f9f9f9;
+    color: #111;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
     margin-top: 20px;
     font-size: 2rem;
-  }
-  
-  canvas {
-    background: #222;
+    font-weight: 600;
+}
+
+canvas {
+    background: #e0e0e0;
     margin-top: 20px;
-    border: 2px solid #fff;
-  }
-  
+    border: 2px solid #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    font-size: 1rem;
+    color: #444;
+}
