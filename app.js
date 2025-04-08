@@ -28,7 +28,7 @@ function draw() {
 
     // Draw snake
     for (let segment of snake) {
-        ctx.fillStyle = "#0f0";
+        ctx.fillStyle = "#016e01";
         ctx.fillRect(segment.x, segment.y, box, box);
     }
 }
