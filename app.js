@@ -33,7 +33,7 @@ function draw() {
     }
 
     // Draw food
-    ctx.fillStyle = "#f00";
+    ctx.fillStyle = "#7d0000";
     ctx.fillRect(food.x, food.y, box, box);
 
     // Move snake
