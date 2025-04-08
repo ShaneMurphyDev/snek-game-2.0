@@ -32,21 +32,37 @@ function draw() {
         ctx.fillRect(segment.x, segment.y, box, box);
     }
 
-      // Move snake
-  let head = { ...snake[0] };
-  if (direction === "UP") head.y -= box;
-  if (direction === "DOWN") head.y += box;
-  if (direction === "LEFT") head.x -= box;
-  if (direction === "RIGHT") head.x += box;
+    // Move snake
+    let head = {
+        ...snake[0]
+    };
+    if (direction === "UP") head.y -= box;
+    if (direction === "DOWN") head.y += box;
+    if (direction === "LEFT") head.x -= box;
+    if (direction === "RIGHT") head.x += box;
 
     // Game over conditions
     if (
         head.x < 0 || head.x >= canvas.width ||
         head.y < 0 || head.y >= canvas.height ||
         snake.some(segment => segment.x === head.x && segment.y === head.y)
-      ) {
+    ) {
         clearInterval(gameInterval);
         alert("Game Over!");
         return;
-      }
+    }
+
+    snake.unshift(head);
+
+    // Eat food
+    if (head.x === food.x && head.y === food.y) {
+        food = {
+            x: Math.floor(Math.random() * (canvasSize / box)) * box,
+            y: Math.floor(Math.random() * (canvasSize / box)) * box
+        };
+    } else {
+        snake.pop();
+    }
 }
+
+gameInterval = setInterval(draw, 100);
