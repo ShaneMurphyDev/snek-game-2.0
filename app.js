@@ -26,6 +26,7 @@ function changeDirection(e) {
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    // Test Comment
     // Draw snake
     for (let segment of snake) {
         ctx.fillStyle = "#016e01";
