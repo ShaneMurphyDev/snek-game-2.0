@@ -32,6 +32,10 @@ function draw() {
         ctx.fillRect(segment.x, segment.y, box, box);
     }
 
+    // Draw food
+    ctx.fillStyle = "#f00";
+    ctx.fillRect(food.x, food.y, box, box);
+
     // Move snake
     let head = {
         ...snake[0]
