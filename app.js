@@ -31,4 +31,12 @@ function draw() {
         ctx.fillStyle = "#016e01";
         ctx.fillRect(segment.x, segment.y, box, box);
     }
+
+      // Move snake
+  let head = { ...snake[0] };
+  if (direction === "UP") head.y -= box;
+  if (direction === "DOWN") head.y += box;
+  if (direction === "LEFT") head.x -= box;
+  if (direction === "RIGHT") head.x += box;
+  
 }
