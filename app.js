@@ -38,5 +38,15 @@ function draw() {
   if (direction === "DOWN") head.y += box;
   if (direction === "LEFT") head.x -= box;
   if (direction === "RIGHT") head.x += box;
-  
+
+    // Game over conditions
+    if (
+        head.x < 0 || head.x >= canvas.width ||
+        head.y < 0 || head.y >= canvas.height ||
+        snake.some(segment => segment.x === head.x && segment.y === head.y)
+      ) {
+        clearInterval(gameInterval);
+        alert("Game Over!");
+        return;
+      }
 }
